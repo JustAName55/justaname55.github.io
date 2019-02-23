@@ -1,9 +1,28 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <script src="tut1-js.js"></script>
+    <link rel="stylesheet" type="text/css" href="interface.css" />
   </head>
 	<body>
-    Hello World
+    <table>
+      <tr>
+        <th>Power</th>
+        <th>Training Speed</th>
+      </tr>
+      <tr>
+        <td align="center" id="currentPower"></td>
+        <td align="center" id="currentTrainingSpeed"></td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <th><button type="button" onClick="train(1)">Train</button</th>
+        <th><button type="button" onClick="startTraining()">Start Training</button></th>
+        <th><button type="button" onClick="stopTraining()">Stop Training</button></th>
+      </tr>
+    </table>
+
+    <script src="main.js"></script>
 	</body>
 </html>

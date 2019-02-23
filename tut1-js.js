@@ -1,5 +1,8 @@
 "use strict";
 
-let message;
-message = "Hello";
-alert(message);
+let admin;
+let name = "John";
+
+alert(`Hello, ${name}!`);
+
+alert(`The result is ${1 + 2}`);
