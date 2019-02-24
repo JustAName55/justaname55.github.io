@@ -20,6 +20,18 @@ const Player = {
     this.updatePower(elapsedTimeSeconds);
     this.updateRank();
   },
+  saveData() {
+    localStorage.setItem("PlayerData", JSON.stringify(this));
+  },
+  load() {
+    let savedData = localStorage.getItem("PlayerData");
+    if(savedData != null) {
+      let oldPlayerObj = JSON.parse(savedData);
+      this.power = oldPlayerObj.power;
+      this.trainingSpeed = oldPlayerObj.trainingSpeed;
+      this.rank = oldPlayerObj.rank;
+    }
+  },
   updatePower(elapsedTimeSeconds) {
     let powerGain = elapsedTimeSeconds * this.trainingSpeed;
     let totalPower = this.power + powerGain;

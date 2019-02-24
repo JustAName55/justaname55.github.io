@@ -6,13 +6,16 @@
 // }
 //
 // RankType = Enum(NewbieRank, ApprenticeRank, GodRank)
+
 let gameAdvanced = false;
 
 Player.init();
+Player.load();
 
 window.setInterval(function() {
 
 Player.advanceState();
+Player.saveData();
 gameAdvanced = true;
 
 }, 100);
