@@ -4,25 +4,33 @@
     <link rel="stylesheet" type="text/css" href="interface.css" />
   </head>
 	<body>
-    <table>
-      <tr>
-        <th>Power</th>
-        <th>Training Speed</th>
-      </tr>
-      <tr>
-        <td align="center" id="currentPower"></td>
-        <td align="center" id="currentTrainingSpeed"></td>
-      </tr>
-    </table>
+    <div class="grid-container">
+      <div class="grid-item">
+        Strength Level:
+      </div>
+      <div class="grid-item">
+        <span id="strengthLevel"></span>
+      </div>
+      <div class="grid-item"></div>
+      <div class="grid-item">
+        Power
+      </div>
+      <div class="grid-item">
+        <span id="currentPower"></span>
+      </div>
+      <div class="grid-item"></div>
+      <div class="grid-item">
+        Training Speed
+      </div>
+      <div class="grid-item">
+        <span id="currentTrainingSpeed"></span>
+      </div>
+      <div class="grid-item"></div>
+    </div>
+        <!--<th><button type="button" onClick="startTraining()">Start Training</button></th>
+        <th><button type="button" onClick="stopTraining()">Stop Training</button></th> -->
 
-    <table>
-      <tr>
-        <th><button type="button" onClick="train(1)">Train</button</th>
-        <th><button type="button" onClick="startTraining()">Start Training</button></th>
-        <th><button type="button" onClick="stopTraining()">Stop Training</button></th>
-      </tr>
-    </table>
-
+    <script src="player.js"></script>
     <script src="main.js"></script>
 	</body>
 </html>
