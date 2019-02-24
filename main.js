@@ -1,30 +1,29 @@
 
+// function Enum(...a) {
+//   const values = {}
+//   a.map((x,n) => values[x["Name"]] = x)
+//   return Object.freeze(values)
+// }
+//
+// RankType = Enum(NewbieRank, ApprenticeRank, GodRank)
+let gameAdvanced = false;
 
-let power = 0;
-let trainingSpeed = 1;
-let currentTrainingSpeed = 0;
-
-let startPower = 0;
-let startTrainingSpeed = 1;
-
-document.getElementById("currentPower").innerHTML = startPower;
-document.getElementById("currentTrainingSpeed").innerHTML = startTrainingSpeed;
-
-
-function train(number) {
-  power = power + number;
-  document.getElementById("currentPower").innerHTML = power;
-}
-
-function startTraining() {
-  currentTrainingSpeed = trainingSpeed
-}
-
-function stopTraining() {
-  currentTrainingSpeed = 0;
-}
+Player.init();
 
 window.setInterval(function() {
-train(currentTrainingSpeed)
 
-}, 1000);
+Player.advanceState();
+gameAdvanced = true;
+
+}, 100);
+
+function frame() {
+  if(gameAdvanced) {
+    Player.updateDisplay();
+    gameAdvanced = false;
+  }
+
+  requestAnimationFrame(frame);
+}
+
+requestAnimationFrame(frame);
